@@ -3,6 +3,7 @@ import { graphqlHTTP } from "express-graphql";
 import { schema } from './schema';
 import cors from 'cors'
 import { DataSource } from "typeorm";
+import { Users } from "./schema/dao/Users";
 
 
 const main = async () => {
@@ -15,9 +16,17 @@ const main = async () => {
         password: 'pgpass',
         database: 'pgdb',
         logging: true,
-        synchronize: false,
-        entities: []
+        synchronize: true,
+        entities: [Users],
     });
+
+    dataSource.initialize()
+    .then(() => {
+        console.log("Data Source has been initialized!")
+    })
+    .catch((err) => {
+        console.error("Error during Data Source initialization", err)
+    })
 
     const app = express()
     app.use(cors())
