@@ -16,7 +16,7 @@ const main = async () => {
         password: 'pgpass',
         database: 'pgdb',
         logging: true,
-        synchronize: true,
+        synchronize: false,
         entities: [Users],
     });
 
