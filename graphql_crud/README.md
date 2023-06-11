@@ -2,6 +2,7 @@
 
 ## Prerequisites
 
+- PostgreSQL ([See dataSource in index.ts](server/src/index.ts))
 - Node 18
 - Yarn
 
