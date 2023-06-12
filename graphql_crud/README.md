@@ -31,7 +31,19 @@ mutation {
 ```graphql
 mutation {
   deleteUser(id: 2) {
-    id
+    success,
+    message
+  }
+}
+```
+
+**Update Password**
+
+```graphql
+mutation {
+  updatePassword(email: "foo@bar.com", oldPassword: "foo123", newPassword: "foo125") {
+    success,
+    message
   }
 }
 ```
