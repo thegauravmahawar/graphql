@@ -16,6 +16,8 @@ yarn dev
 
 ## GraphQL Mutations
 
+**Create User**
+
 ```graphql
 mutation {
   createUser(name: "Foo Bar", email: "foo@bar.com", password: "xyz123") {
@@ -24,7 +26,19 @@ mutation {
 }
 ```
 
+**Delete User**
+
+```graphql
+mutation {
+  deleteUser(id: 2) {
+    id
+  }
+}
+```
+
 ## GraphQL Queries
+
+**Get All Users**
 
 ```graphql
 query {
